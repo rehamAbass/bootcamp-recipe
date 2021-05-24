@@ -1,15 +1,14 @@
 
  const Renderer = function(){
-    const renderRecipes = function(recipesArr){
-        // console.log("from renderer - renderRecipes\n recipes =\n",recipesArr)
+    const render = function(recipes){
         var source = $('#recipe-template').html();
         const template = Handlebars.compile(source);
-        const newHTML = template({recipes:recipesArr});
+        const newHTML = template({recipes:recipes});
         cardsElement.append(newHTML);
         
     }
     return {
-        renderRecipes:renderRecipes     
+        render:render    
     }
     
 }
